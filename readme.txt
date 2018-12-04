@@ -1,7 +1,7 @@
 Application Name: Blog Application
 Developer: Vipul Zambare
 
-Application is developed using .NET framework 4.x and ASP.NET MVC 5 web application framework
+Application is developed using .NET framework 4.6 and ASP.NET MVC 5 web application framework
 Entity Framework ORM is used for DB connectivity.
 
 Requirements covered:
@@ -37,7 +37,3 @@ But I have added sql script to create some dummy data.
 			
 
 		--- End of Readme ---
-
-
- 
-

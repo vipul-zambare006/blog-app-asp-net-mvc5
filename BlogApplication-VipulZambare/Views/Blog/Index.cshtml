@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BlogApplication_VipulZambare.Models.Blog>
+
+@{
+    ViewBag.Title = "Welcome Admin";
+}
+
+<h2>Admin: List of Blogs</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BannerImgUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishToDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BannerImgUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishToDate)
+        </td>
+        <td>
+            @Html.ActionLink("Draft", "Draft", new { id = item.BlogId }) |
+            @Html.ActionLink("Ready To Publish", "ReadyToPublish", new { id = item.BlogId }) |
+            @Html.ActionLink("Details", "View", new { id = item.BlogId }) |
+            @Html.ActionLink("Publish", "Publish", new { id = item.BlogId }) |
+            @Html.ActionLink("Reject", "Reject", new { id = item.BlogId })
+        </td>
+    </tr>
+}
+
+</table>
